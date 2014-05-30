@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2014 | KISSY 动画插件</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="website" property="og:type">
+<meta content="KISSY 动画插件" property="og:title">
+<meta content="http://yoursite.com/archives/2014/" property="og:url">
+<meta property="og:image">
+<meta content="KISSY 动画插件" property="og:site_name">
+<meta property="og:description">
+<meta content="summary" name="twitter:card">
+  
+    <link rel="alternative" href="/atom.xml" title="KISSY 动画插件" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">KISSY 动画插件</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-kissy-anime" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/30/kissy-anime/" class="article-date">
+  <time datetime="2014-05-30T02:02:09.000Z" itemprop="datePublished">May 30 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/30/kissy-anime/">KISSY动画插件DEMO</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js" charset="utf-8"></script>
+<style>
+.anime {
+    position: relative;
+    overflow: hidden;
+}
+.square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #444;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #D88;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Microsoft YaHei" sans-serif;
+    text-align: center;
+}
+
+#anime-width,
+#anime-color,
+#anime-callback {
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    line-height: 100px;
+}
+
+#anime-property,
+#anime-duration1,
+#anime-easing-easeFromTo,
+#anime-reverse-normal,
+#anime-pause,
+#anime-stop,
+#anime-revoke {
+    left: 20px;
+    top: 20px;
+}
+
+#anime-duration2,
+#anime-easing-bounce,
+#anime-reverse-reverse {
+    left: 20px;
+    bottom: 20px;
+}
+
+.start {
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#anime-scroll {
+    height: 100%;
+    overflow: auto;
+    font-size: 2em;
+}
+
+</style>
+
+<b>目前还在开发阶段，尚未上传到CDN，请通过本地方式进行引入。除transform属性外，支持ie6+</b>
+
+<h1>属性DEMO</h1>
+<h2>属性变化</h2>
+<div class="anime" style="height:300px">
+    <div id="anime-property-start" class="square start">动画开始</div>
+    <div id="anime-property" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-property"</span>, {
+    left: <span class="string">"380px"</span>,
+    top: <span class="number">180</span>,
+    opacity: <span class="number">.5</span>,
+    transform: <span class="string">"rotate(720deg)"</span>
+});
+anime.run();
+</pre></td></tr></table></figure>
+
+
+<h2>颜色变化</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-color-start" class="square start">动画开始</div>
+    <div id="anime-color" class="square">文本颜色</div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-color"</span>, {
+    backgroundColor: <span class="string">"#D88"</span>,
+    color: <span class="string">"#444"</span>
+});
+anime.run();
+</pre></td></tr></table></figure>
+
+
+<h2>滚动变化</h2>
+<div class="anime" style="height:500px">
+    <div id="anime-scroll-start" class="square start">动画开始</div>
+    <div id="anime-scroll">
+        <p>《三国演义》描写的是从东汉末年到西晋初年之间近一百年的历史，反映了三国时代的政治军事斗争以及各类社会矛盾的渗透与转化。在对三国态度上，尊刘反曹鄙吴是民间的主要倾向，以刘备集团作为描写的中心，隐含着人民对汉室复兴的希望和皇室正统思想，尽管这些旧有观点已不容于今日。清人毛氏父子批改三国演义时，把明代流传下来的版本中不实讥望、怪力乱神之处删除勘正。鲁迅在《中国小说的历史的变迁》称：“因为三国底事情，不像五代那样纷乱；又不像楚汉那样简单；恰是不简不繁，适于作小说。而且三国时底英雄，智术武勇，非常动人，所以人都喜欢取来作小说底材料。”</p>
+        <p>而书中亦刻画了近二百个人物形象，其中最为成功的有诸葛亮、曹操、关羽、刘备等人。诸葛亮是作者心目中的“贤相”的化身，他具有“鞠躬尽瘁，死而后已”的高风亮节，具有经世济民再造太平盛世的雄心壮志，而且作者还赋予他呼风唤雨、神机妙算的奇异本领。曹操则被塑造成一位“宁教我负天下人，不教天下人负我”的奸雄，既有雄才大略，又残暴奸诈，是一个政治野心家和阴谋家。关羽“威猛刚毅”、“义重如山”，但主要以个人恩怨为前提。刘备则被塑造成为仁民爱物、礼贤下士、知人善任的仁君典型。
+        而当中的战争，手法多样，读者往往感到一场场刀光血影的战争场面。其中，官渡之战、赤壁之战等战争的描写被认为是波澜起伏、跌宕跳跃，使人读来惊心动魄，将史书上所没有的情节描写得十分细致。不过，前33回写了从桃园结义到曹操统一北方的24年，71回半写了刘备三顾茅庐到诸葛亮死于五丈原的27年，而以后的46年只用了15回半就草草收场。</p>
+        <p>由于《三国演义》在民间的流传范围、影响程度，都可谓是中国古代历史小说中独一无二的，这就造成了普通民众，甚至一部分专家学者对东汉末年至三国时期，也就是小说所描述的历史时期的概况、事件、人物缺乏正确的常识，从某种程度上说，小说《三国演义》的内容在国人心目中已经占据了真实历史的地位，这种现象在近来的电影、文学作品中都有所反应。民间也一直对这类现象有不少争论。
+        非凡的叙事才能，全景式的战争描写，特征化性格的艺术典型，浅近的文言，构成了《三国演义》的主要特色。</p>
+    </div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-scroll-text"</span>, {
+    scrollTop: <span class="number">0</span>
+});
+anime.run();
+</pre></td></tr></table></figure>
+
+
+<h1>可选设置</h1>
+
+<h2>动画时长</h2>
+<div class="anime" style="height:300px">
+    <div id="anime-duration-start" class="square start">动画开始</div>
+    <div id="anime-duration1" class="square"></div>
+    <div id="anime-duration2" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="keyword">new</span> Anime(<span class="string">"#anime-duration1"</span>, {
+    left: <span class="number">300</span>
+}, {
+    duration: <span class="number">2000</span>
+}).run();
+
+<span class="keyword">new</span> Anime(<span class="string">"#anime-duration2"</span>, {
+    left: <span class="number">300</span>
+}, {
+    duration: <span class="number">1000</span>
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h2>缓动函数</h2>
+<div class="anime" style="height:300px">
+    <div id="anime-easing-start" class="square start">动画开始</div>
+    <div id="anime-easing-easeFromTo" class="square"></div>
+    <div id="anime-easing-bounce" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="keyword">new</span> Anime(<span class="string">"#anime-easing-easeFromTo"</span>, {
+    left: <span class="number">300</span>
+}, {
+    easing: <span class="string">"easeFromTo"</span>
+}).run();
+
+<span class="keyword">new</span> Anime(<span class="string">"#anime-easing-bounce"</span>, {
+    left: <span class="number">300</span>
+}, {
+    easing: <span class="string">"bounce"</span>
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h2>回调函数</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-callback-start" class="square start">动画开始</div>
+    <div id="anime-callback" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="keyword">new</span> Anime(<span class="string">"#anime-callback"</span>, {
+    opacity: <span class="number">0</span>
+}, {
+    callback: <span class="function"><span class="keyword">function</span><span class="params">(elems)</span>{</span>
+        alert(<span class="string">"动画结束"</span>);
+    }
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h2>播放次数</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-times-start" class="square start">动画开始</div>
+    <div id="anime-times" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">new</span> Anime(<span class="string">"#anime-times"</span>, {
+    left: <span class="number">300</span>
+}, {
+    easing: <span class="string">"bounce"</span>,
+    times: <span class="number">2</span>
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h2>倒放</h2>
+<div class="anime" style="height:300px">
+    <div id="anime-reverse-start" class="square start">动画开始</div>
+    <div id="anime-reverse-normal" class="square"></div>
+    <div id="anime-reverse-reverse" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="keyword">new</span> Anime(<span class="string">"#anime-reverse-normal"</span>, {
+    left: <span class="number">300</span>
+}, {
+    easing: <span class="string">"bounce"</span>
+}).run();
+
+<span class="keyword">new</span> Anime(<span class="string">"#anime-reverse-reverse"</span>, {
+    left: <span class="number">300</span>
+}, {
+    easing: <span class="string">"bounce"</span>,
+    reverse: <span class="literal">true</span>
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h1>动画控制</h1>
+<h2>暂停与恢复</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-pause-start" class="square start">动画开始</div>
+    <div id="anime-pause" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-reverse-normal"</span>, {
+    left: <span class="number">300</span>
+}, {
+    duration: <span class="number">2000</span>
+});
+anime.run();
+
+setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    anime.pause();
+}, <span class="number">1000</span>);
+
+setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    anime.resume();
+}, <span class="number">2000</span>);
+</pre></td></tr></table></figure>
+
+
+<h2>取消动画</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-stop-start" class="square start">动画开始</div>
+    <div id="anime-stop" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-stop"</span>, {
+    left: <span class="number">300</span>
+}, {
+    duration: <span class="number">2000</span>
+});
+anime.run();
+
+setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    anime.stop();
+}, <span class="number">1000</span>);
+</pre></td></tr></table></figure>
+
+
+<h2>回到动画前效果</h2>
+<div class="anime" style="height:200px">
+    <div id="anime-revoke-start" class="square start">动画开始</div>
+    <div id="anime-revoke" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="keyword">var</span> anime = <span class="keyword">new</span> Anime(<span class="string">"#anime-revoke"</span>, {
+    left: <span class="number">300</span>
+}, {
+    callback: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        <span class="keyword">this</span>.revoke();
+    }
+}).run();
+</pre></td></tr></table></figure>
+
+
+<h2>单帧播放</h2>
+<div class="anime" style="height:300px">
+    <div id="anime-go-start" class="square start">下一帧</div>
+    <div id="anime-go" class="square"></div>
+</div>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="keyword">var</span> replayanime = <span class="keyword">new</span> Anime(<span class="string">"#anime-go"</span>, {
+    left: <span class="string">"380px"</span>,
+    top: <span class="number">180</span>,
+    opacity: <span class="number">.5</span>,
+    transform: <span class="string">"rotate(720deg)"</span>
+});
+
+Event.on(<span class="string">"#anime-go-start"</span>, <span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    replayanime.go();
+});
+</pre></td></tr></table></figure>
+
+
+<script>
+    var S = KISSY;
+    S.Config.debug = true;
+    if (S.Config.debug) {
+        var srcPath = "/";
+        S.config({
+            packages: [{
+                name: "gallery/anime",
+                path: srcPath,
+                charset: "utf-8",
+                ignorePackageNameInUri: true
+            }]
+        });
+    }
+
+    S.use('gallery/anime/1.0/anime, event', function(S, Anime, Event) {
+        Event.on("#anime-property-start", "click", function(e) {
+            var anime = new Anime("#anime-property", {
+                left: "380px",
+                top: 180,
+                opacity: .5,
+                transform: "rotate(720deg)"
+            });
+            anime.run();
+        });
+        Event.on("#anime-color-start", "click", function(e) {
+            var anime = new Anime("#anime-color", {
+                backgroundColor: "#D88",
+                color: "#444"
+            });
+            anime.run();
+        });
+
+        Event.on("#anime-scroll-start", "click", function(e) {
+            var anime = new Anime("#anime-scroll", {
+                scrollTop: 0
+            });
+            anime.run();
+        });
+
+        Event.on("#anime-duration-start", "click", function() {
+            new Anime("#anime-duration1", {
+                left: 300
+            }, {
+                duration: 2000
+            }).run();
+            new Anime("#anime-duration2", {
+                left: 300
+            }, {
+                duration: 1000
+            }).run();
+        });
+
+        Event.on("#anime-easing-start", "click", function() {
+            new Anime("#anime-easing-easeFromTo", {
+                left: 300
+            }, {
+                easing: "easeFromTo"
+            }).run();
+            new Anime("#anime-easing-bounce", {
+                left: 300
+            }, {
+                easing: "bounce"
+            }).run();
+        });
+
+        Event.on("#anime-callback-start", "click", function() {
+            new Anime("#anime-callback", {
+                opacity: 0
+            }, {
+                callback: function(elems){
+                    alert("动画结束");
+                }
+            }).run();
+        });
+
+        Event.on("#anime-reverse-start", "click", function() {
+            new Anime("#anime-reverse-normal", {
+                left: 300
+            }, {
+                easing: "bounce"
+            }).run();
+
+            new Anime("#anime-reverse-reverse", {
+                left: 300
+            }, {
+                easing: "bounce",
+                reverse: true
+            }).run();
+        });
+
+        Event.on("#anime-times-start", "click", function() {
+            new Anime("#anime-times", {
+                left: 300
+            }, {
+                easing: "bounce",
+                times: 2
+            }).run();
+        });
+
+        Event.on("#anime-pause-start", "click", function() {
+            var anime = new Anime("#anime-pause", {
+                left: 300
+            }, {
+                duration: 2000
+            });
+            anime.run();
+
+            setTimeout(function(){
+                anime.pause();
+            }, 1000);
+
+            setTimeout(function(){
+                anime.resume();
+            }, 2000);
+        });
+        Event.on("#anime-stop-start", "click", function() {
+            var anime = new Anime("#anime-stop", {
+                left: 300
+            }, {
+                duration: 2000
+            });
+            anime.run();
+
+            setTimeout(function(){
+                anime.stop();
+            }, 1000);
+        });
+        (function(){
+            var replayanime = new Anime("#anime-replay-start", {
+                left: 300
+            }).run();
+            Event.on("#anime-replay-start", "click", function() {
+                replayanime.replay();
+            });
+        }());
+        Event.on("#anime-revoke-start", "click", function() {
+            var anime = new Anime("#anime-revoke", {
+                left: 300
+            }, {
+                callback: function(){
+                    this.revoke();
+                }
+            }).run();
+        });
+        (function(){
+            var replayanime = new Anime("#anime-go", {
+                left: "380px",
+                top: 180,
+                opacity: .5,
+                transform: "rotate(720deg)"
+            });
+            Event.on("#anime-go-start", "click", function() {
+                replayanime.go();
+            });
+        }());
+    })
+    S.use('dom', function(S, Dom){
+        var codes = Dom.query("pre code");
+        S.each(codes, function(node){
+            hljs.highlightBlock(node);
+        });
+    });
+</script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/05/30/kissy-anime/" data-id="obn4l9pbrtm51kwo" class="article-share-link">Share</a>
+      
+        <a href="http://yoursite.com/2014/05/30/kissy-anime/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05">May 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/05/30/kissy-anime/">KISSY动画插件DEMO</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 天镶<br>
+      Powered by <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'skyinlayer';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script type="text/javascript" src="/js/script.js"></script>
+  </div>
+</body>
+</html>

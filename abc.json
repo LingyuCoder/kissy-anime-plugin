@@ -1,0 +1,17 @@
+{
+    "name": "anime",
+    "comName":"Anime",
+    "version": "1.0",
+    "desc": "",
+    "tag":"动画",
+    "githubName":"LingyuCoder",
+    "author": {
+        "name": "skyinlayer",
+        "email": "lingyucoder@gmail.com",
+        "page": ""
+    },
+	"flexComboPort":"8081",
+	"reserveServerPort":"8080",
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
